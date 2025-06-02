@@ -1,14 +1,53 @@
+import React, { useState } from "react";
 import Input, { TextArea } from "../ui/Input";
 import Label from "../ui/Label";
 
 function ContactForm({ darkMode }: { darkMode: boolean }) {
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = formData.get("name")?.toString().trim() ?? "";
+    const email = formData.get("email")?.toString().trim() ?? "";
+    const subject = formData.get("subject")?.toString().trim() ?? "";
+    const message = formData.get("message")?.toString().trim() ?? "";
+
+    const newErrors = {
+      name: name === "" ? "Name is required" : "",
+      email:
+        email === ""
+          ? "Email is required"
+          : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+          ? "Invalid email address"
+          : "",
+      subject: subject === "" ? "Subject is required" : "",
+      message: message === "" ? "Message is required" : "",
+    };
+
+    setErrors(newErrors);
+
+    const hasError = Object.values(newErrors).some((msg) => msg !== "");
+
+    if (!hasError) {
+      // Submit logic here
+      console.log({ name, email, subject, message });
+      form.reset();
+      setErrors({ name: "", email: "", subject: "", message: "" });
+    }
   };
+
   return (
     <div className={`rounded-xl p-8 ${darkMode ? "bg-gray-800" : "bg-white"}`}>
       <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
-      <form className="space-y-6" onSubmit={handleSubmit}>
+      <form className="space-y-6" onSubmit={handleSubmit} noValidate>
         <div>
           <Label darkMode={darkMode} htmlFor="name">
             Your Name
@@ -20,14 +59,14 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             type="text"
             id="name"
             name="name"
-            required={true}
+            required
+            error={errors.name}
           />
         </div>
         <div>
           <Label darkMode={darkMode} htmlFor="email">
             Your Email
           </Label>
-
           <Input
             darkMode={darkMode}
             placeholder="email@boluwatife.tech"
@@ -35,7 +74,8 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             type="email"
             id="email"
             name="email"
-            required={true}
+            required
+            error={errors.email}
           />
         </div>
         <div>
@@ -48,8 +88,9 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             type="text"
             id="subject"
             name="subject"
-            required={true}
+            required
             autoComplete="off"
+            error={errors.subject}
           />
         </div>
         <div>
@@ -61,7 +102,8 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             id="message"
             name="message"
             placeholder="Your message here..."
-            required={true}
+            required
+            error={errors.message}
           />
         </div>
         <button

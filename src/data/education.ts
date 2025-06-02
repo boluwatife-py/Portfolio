@@ -3,8 +3,8 @@ import type { Education } from "../types/education";
 export const educations: Education[] = [
   {
     icon: 'fa-graduation-cap',
-    title: 'BSc in Computer Science',
-    subtitle: 'University of Lagos • 2016 - 2020',
+    title: 'BSc in Information System Science',
+    subtitle: 'Ladoke Akintola Univercity of technology • 2024 - 2029',
   },
   {
     icon: 'fa-certificate',
@@ -14,6 +14,6 @@ export const educations: Education[] = [
   {
     icon: 'fa-award',
     title: 'Full-Stack Web Development',
-    subtitle: 'Udacity Nanodegree • 2021',
+    subtitle: 'SQI College of ICT • 2023',
   },
 ];

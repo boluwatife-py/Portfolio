@@ -1,3 +1,4 @@
+// Input.tsx
 import React, { useState } from "react";
 
 interface InputProps {
@@ -8,6 +9,7 @@ interface InputProps {
   id: string;
   required?: boolean;
   autoComplete?: React.HTMLInputAutoCompleteAttribute;
+  error?: string;
 }
 
 interface TextAreaProps {
@@ -17,6 +19,7 @@ interface TextAreaProps {
   id: string;
   required?: boolean;
   rows?: number | 5;
+  error?: string;
 }
 
 export default function Input({
@@ -27,27 +30,37 @@ export default function Input({
   required = false,
   id,
   autoComplete,
+  error,
 }: InputProps) {
   const [inputValue, setInputValue] = useState("");
+
   return (
-    <input
-      type={type}
-      id={id}
-      name={name}
-      placeholder={placeholder}
-      autoComplete={autoComplete}
-      className={`w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
-        darkMode
-          ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-          : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
-      } border`}
-      value={inputValue}
-      onChange={(e) => setInputValue(e.target.value)}
-      required={required}
-    />
+    <div className="space-y-1">
+      <input
+        type={type}
+        id={id}
+        name={name}
+        placeholder={placeholder}
+        autoComplete={autoComplete}
+        className={`w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+          darkMode
+            ? "bg-gray-700 text-white placeholder-gray-400"
+            : "bg-gray-50 text-gray-900 placeholder-gray-500"
+        } ${
+          error
+            ? "border border-red-500 focus:ring-red-500"
+            : " border-gray-300 focus:ring-indigo-500"
+        }`}
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        required={required}
+      />
+      {error && <p className="text-red-500 text-sm">{error}</p>}
+    </div>
   );
 }
 
+// TextArea.tsx
 export function TextArea({
   darkMode,
   placeholder,
@@ -55,19 +68,27 @@ export function TextArea({
   required = false,
   id,
   rows = 5,
-}: TextAreaProps) {
+  error,
+}: TextAreaProps & { error?: string }) {
   return (
-    <textarea
-      id={id}
-      rows={rows}
-      name={name}
-      placeholder={placeholder}
-      className={`w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
-        darkMode
-          ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
-          : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500"
-      } border`}
-      required={required}
-    ></textarea>
+    <div className="space-y-1">
+      <textarea
+        id={id}
+        rows={rows}
+        name={name}
+        placeholder={placeholder}
+        className={`w-full px-4 py-3 rounded-lg focus:ring-2 focus:outline-none ${
+          darkMode
+            ? "bg-gray-700 text-white placeholder-gray-400"
+            : "bg-gray-50 text-gray-900 placeholder-gray-500"
+        } ${
+          error
+            ? "border border-red-500 focus:ring-red-500"
+            : "border-gray-300 focus:ring-indigo-500"
+        }`}
+        required={required}
+      ></textarea>
+      {error && <p className="text-red-500 text-sm">{error}</p>}
+    </div>
   );
 }

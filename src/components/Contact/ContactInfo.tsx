@@ -20,7 +20,7 @@ export default function ContactInfo({darkMode}: { darkMode: boolean }) {
               Email
             </h4>
             <a
-              href="mailto:hello@boluwatife.dev"
+              href="mailto:email@boluwatife.tech"
               className="text-indigo-600 hover:underline"
             >
               email@boluwatife.tech

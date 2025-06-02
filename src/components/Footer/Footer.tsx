@@ -36,16 +36,16 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
                 <i className="fab fa-github"></i>
               </a>
               <a
-                href="https://linkedin.com/in/boluwatife"
+                href="https://discordapp.com/users/1343657247175213077"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
-                aria-label="LinkedIn"
+                aria-label="Discord"
               >
-                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-discord"></i>
               </a>
               <a
-                href="https://twitter.com/boluwatifedev"
+                href="https://twitter.com/boluwatifeileri"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
