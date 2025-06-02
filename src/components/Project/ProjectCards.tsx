@@ -17,27 +17,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
           : "bg-white hover:shadow-xl"
       }`}
     >
-      <div className="h-48 overflow-hidden">
+      <div className="h-40 sm:h-44 md:h-48 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110"
         />
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+      <div className="p-4 sm:p-5 md:p-6">
+        <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2">
+          {project.title}
+        </h3>
         <p
-          className={`mb-4 text-sm ${
+          className={`mb-3 sm:mb-4 text-xs sm:text-sm ${
             darkMode ? "text-gray-400" : "text-gray-600"
           }`}
         >
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className={`px-2 py-1 text-xs font-medium rounded-md ${
+              className={`px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs font-medium rounded-md ${
                 darkMode
                   ? "bg-gray-700 text-gray-300"
                   : "bg-gray-100 text-gray-700"
@@ -47,30 +49,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
             </span>
           ))}
         </div>
-        <div className="flex space-x-3">
+        <div className="flex space-x-2 sm:space-x-3">
           <a
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`px-3 py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
+            className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
               darkMode
                 ? "bg-indigo-600 hover:bg-indigo-700 text-white"
                 : "bg-indigo-600 hover:bg-indigo-700 text-white"
             }`}
           >
-            <i className="fas fa-external-link-alt mr-1.5"></i> Live Demo
+            <i className="fas fa-external-link-alt mr-1 sm:mr-1.5"></i> Live
+            Demo
           </a>
           <a
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`px-3 py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
+            className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
               darkMode
                 ? "bg-gray-700 hover:bg-gray-600 text-gray-300"
                 : "bg-gray-200 hover:bg-gray-300 text-gray-700"
             }`}
           >
-            <i className="fab fa-github mr-1.5"></i> Code
+            <i className="fab fa-github mr-1 sm:mr-1.5"></i> Code
           </a>
         </div>
       </div>

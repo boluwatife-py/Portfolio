@@ -1,16 +1,29 @@
+import { smoothScrollTo } from "../../utils/smoothScroll";
+
 export default function Footer({ darkMode }: { darkMode: boolean }) {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    if (targetId.startsWith("#")) {
+      e.preventDefault();
+      smoothScrollTo(targetId);
+    }
+  };
+
   return (
     <footer
-      className={`py-12 ${
+      className={`py-8 sm:py-10 md:py-12 ${
         darkMode ? "bg-gray-800 text-gray-300" : "bg-gray-100 text-gray-700"
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-5 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-7 md:gap-8">
           <div className="md:col-span-2">
             <a
               href="#home"
-              className="text-2xl font-bold tracking-tight mb-4 block"
+              onClick={(e) => handleClick(e, "#home")}
+              className="text-xl sm:text-2xl font-bold tracking-tight mb-3 sm:mb-4 block"
             >
               <span className="text-indigo-600">Boluwatife</span>
               <span className={`${darkMode ? "text-white" : "text-gray-900"}`}>
@@ -18,19 +31,19 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               </span>
             </a>
             <p
-              className={`mb-4 max-w-md ${
+              className={`mb-3 sm:mb-4 max-w-md text-sm sm:text-base ${
                 darkMode ? "text-gray-400" : "text-gray-600"
               }`}
             >
               Building exceptional digital experiences with modern web
               technologies. Let's create something amazing together.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 sm:space-x-4">
               <a
                 href="https://github.com/boluwatife-py"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
+                className={`text-base sm:text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
                 aria-label="GitHub"
               >
                 <i className="fab fa-github"></i>
@@ -39,7 +52,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
                 href="https://discordapp.com/users/1343657247175213077"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
+                className={`text-base sm:text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
                 aria-label="Discord"
               >
                 <i className="fab fa-discord"></i>
@@ -48,7 +61,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
                 href="https://twitter.com/boluwatifeileri"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
+                className={`text-base sm:text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
                 aria-label="Twitter"
               >
                 <i className="fab fa-twitter"></i>
@@ -57,7 +70,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
                 href="https://dev.to/boluwatifeilerioluwa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
+                className={`text-base sm:text-lg hover:text-indigo-600 transition-colors cursor-pointer`}
                 aria-label="Dev.to"
               >
                 <i className="fab fa-dev"></i>
@@ -65,12 +78,15 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
             </div>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-2 sm:space-y-2.5">
               <li>
                 <a
                   href="#home"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  onClick={(e) => handleClick(e, "#home")}
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   Home
                 </a>
@@ -78,7 +94,8 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               <li>
                 <a
                   href="#projects"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  onClick={(e) => handleClick(e, "#projects")}
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   Projects
                 </a>
@@ -86,7 +103,8 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               <li>
                 <a
                   href="#about"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  onClick={(e) => handleClick(e, "#about")}
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   About
                 </a>
@@ -94,7 +112,8 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               <li>
                 <a
                   href="#contact"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  onClick={(e) => handleClick(e, "#contact")}
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   Contact
                 </a>
@@ -104,7 +123,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   Resume
                 </a>
@@ -112,12 +131,14 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+              Services
+            </h3>
+            <ul className="space-y-2 sm:space-y-2.5">
               <li>
                 <a
                   href="#"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   Web Development
                 </a>
@@ -125,7 +146,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               <li>
                 <a
                   href="#"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   API Development
                 </a>
@@ -133,7 +154,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               <li>
                 <a
                   href="#"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   UI/UX Design
                 </a>
@@ -141,7 +162,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               <li>
                 <a
                   href="#"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   Technical Consultation
                 </a>
@@ -149,7 +170,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
               <li>
                 <a
                   href="#"
-                  className="hover:text-indigo-600 transition-colors cursor-pointer"
+                  className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   Code Review
                 </a>
@@ -157,18 +178,18 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-7 md:pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
           <p
-            className={`text-sm ${
+            className={`text-xs sm:text-sm ${
               darkMode ? "text-gray-400" : "text-gray-600"
             }`}
           >
             &copy; {new Date().getFullYear()} Boluwatife Akingbade. All rights
             reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex items-center space-x-4">
+          <div className="mt-3 md:mt-0 flex items-center space-x-3 sm:space-x-4">
             <span
-              className={`text-sm ${
+              className={`text-xs sm:text-sm ${
                 darkMode ? "text-gray-400" : "text-gray-600"
               }`}
             >
@@ -176,14 +197,15 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
             </span>
             <a
               href="#home"
-              className={`w-10 h-10 rounded-full flex items-center justify-center ${
+              onClick={(e) => handleClick(e, "#home")}
+              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center ${
                 darkMode
                   ? "bg-gray-700 hover:bg-gray-600"
                   : "bg-gray-200 hover:bg-gray-300"
               } transition-colors cursor-pointer`}
               aria-label="Back to top"
             >
-              <i className="fas fa-arrow-up"></i>
+              <i className="fas fa-arrow-up text-sm sm:text-base"></i>
             </a>
           </div>
         </div>

@@ -31,14 +31,19 @@ const Projects: React.FC<ProjectsProps> = ({
   };
 
   return (
-    <section id="projects" className={`py-20 ${darkMode ? "bg-gray-900" : "bg-gray-50"}`}>
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section
+      id="projects"
+      className={`py-12 sm:py-16 md:py-20 ${
+        darkMode ? "bg-gray-900" : "bg-gray-50"
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-5 md:px-6">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">
             My <span className="text-indigo-600">Projects</span>
           </h2>
           <p
-            className={`max-w-2xl mx-auto ${
+            className={`text-sm sm:text-base max-w-2xl mx-auto ${
               darkMode ? "text-gray-400" : "text-gray-600"
             }`}
           >
@@ -52,7 +57,7 @@ const Projects: React.FC<ProjectsProps> = ({
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {filteredProjects.slice(0, visibleProjects).map((project) => (
             <ProjectCard
               key={project.id}
@@ -62,10 +67,10 @@ const Projects: React.FC<ProjectsProps> = ({
           ))}
         </div>
         {visibleProjects < filteredProjects.length && (
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-8 sm:mt-10 md:mt-12">
             <button
               onClick={handleLoadMore}
-              className={`px-6 py-3 text-sm font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
+              className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
                 darkMode
                   ? "bg-gray-800 hover:bg-gray-700 text-white border border-gray-700"
                   : "bg-white hover:bg-gray-100 text-gray-800 border border-gray-300"

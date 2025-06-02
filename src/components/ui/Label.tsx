@@ -1,7 +1,7 @@
 function Label({
   darkMode,
   children,
-  htmlFor
+  htmlFor,
 }: {
   darkMode: boolean;
   children?: React.ReactNode;
@@ -10,7 +10,7 @@ function Label({
   return (
     <label
       htmlFor={htmlFor}
-      className={`block text-sm font-medium mb-2 ${
+      className={`block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 ${
         darkMode ? "text-gray-300" : "text-gray-700"
       }`}
     >

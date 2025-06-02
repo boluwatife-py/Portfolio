@@ -7,16 +7,18 @@ function About({ darkMode }: { darkMode: boolean }) {
   return (
     <section
       id="about"
-      className={`py-20 ${darkMode ? "bg-gray-800" : "bg-white"}`}
+      className={`py-12 sm:py-16 md:py-20 ${
+        darkMode ? "bg-gray-800" : "bg-white"
+      }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-5 md:px-6">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6">
               About <span className="text-indigo-600">Me</span>
             </h2>
             <p
-              className={`mb-4 leading-relaxed ${
+              className={`mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed ${
                 darkMode ? "text-gray-300" : "text-gray-700"
               }`}
             >
@@ -27,7 +29,7 @@ function About({ darkMode }: { darkMode: boolean }) {
               problems.
             </p>
             <p
-              className={`mb-6 leading-relaxed ${
+              className={`mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base leading-relaxed ${
                 darkMode ? "text-gray-300" : "text-gray-700"
               }`}
             >
@@ -40,18 +42,16 @@ function About({ darkMode }: { darkMode: boolean }) {
             <ExpertiseGrid darkMode={darkMode} />
             <Button
               variant="primary"
-              className="mt-4"
+              className="mt-3 sm:mt-4"
               darkMode={darkMode}
               href="/resume.pdf"
             >
               <i className="fas fa-download mr-2"></i> Download Resume
             </Button>
           </div>
-          <div className="space-y-8">
-            <SkillChart darkMode={darkMode}/>
-            <EducationCertifications
-              darkMode={darkMode}
-            ></EducationCertifications>
+          <div className="space-y-6 sm:space-y-7 md:space-y-8">
+            <SkillChart darkMode={darkMode} />
+            <EducationCertifications darkMode={darkMode} />
           </div>
         </div>
       </div>

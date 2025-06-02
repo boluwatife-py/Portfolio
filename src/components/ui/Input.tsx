@@ -42,20 +42,20 @@ export default function Input({
         name={name}
         placeholder={placeholder}
         autoComplete={autoComplete}
-        className={`w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
+        className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
           darkMode
             ? "bg-gray-700 text-white placeholder-gray-400"
             : "bg-gray-50 text-gray-900 placeholder-gray-500"
         } ${
           error
             ? "border border-red-500 focus:ring-red-500"
-            : " border-gray-300 focus:ring-indigo-500"
+            : "border-gray-300 focus:ring-indigo-500"
         }`}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         required={required}
       />
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="text-xs sm:text-sm text-red-500">{error}</p>}
     </div>
   );
 }
@@ -77,7 +77,7 @@ export function TextArea({
         rows={rows}
         name={name}
         placeholder={placeholder}
-        className={`w-full px-4 py-3 rounded-lg focus:ring-2 focus:outline-none ${
+        className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg focus:ring-2 focus:outline-none ${
           darkMode
             ? "bg-gray-700 text-white placeholder-gray-400"
             : "bg-gray-50 text-gray-900 placeholder-gray-500"
@@ -88,7 +88,7 @@ export function TextArea({
         }`}
         required={required}
       ></textarea>
-      {error && <p className="text-red-500 text-sm">{error}</p>}
+      {error && <p className="text-xs sm:text-sm text-red-500">{error}</p>}
     </div>
   );
 }

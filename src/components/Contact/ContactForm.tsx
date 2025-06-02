@@ -45,9 +45,19 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
   };
 
   return (
-    <div className={`rounded-xl p-8 ${darkMode ? "bg-gray-800" : "bg-white"}`}>
-      <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
-      <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+    <div
+      className={`rounded-xl p-4 sm:p-6 md:p-8 ${
+        darkMode ? "bg-gray-800" : "bg-white"
+      }`}
+    >
+      <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">
+        Send Me a Message
+      </h3>
+      <form
+        className="space-y-4 sm:space-y-6"
+        onSubmit={handleSubmit}
+        noValidate
+      >
         <div>
           <Label darkMode={darkMode} htmlFor="name">
             Your Name
@@ -108,7 +118,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
         </div>
         <button
           type="submit"
-          className="w-full px-6 py-3 text-sm font-medium rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors !rounded-button whitespace-nowrap cursor-pointer"
+          className="w-full px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors !rounded-button whitespace-nowrap cursor-pointer"
         >
           Send Message
         </button>
