@@ -5,7 +5,7 @@ export interface Project {
   description: string;
   image: string;
   technologies: string[];
-  liveLink: string;
+  liveLink: string | null;
   githubLink: string | {frontend: string; backend: string };
   category: 'frontend' | 'backend' | 'fullstack';
 }

@@ -50,31 +50,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
           ))}
         </div>
         <div className="flex space-x-2 sm:space-x-3">
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
-              darkMode
-                ? "bg-indigo-600 hover:bg-indigo-700 text-white"
-                : "bg-indigo-600 hover:bg-indigo-700 text-white"
-            }`}
-          >
-            <i className="fas fa-external-link-alt mr-1 sm:mr-1.5"></i> Live
-            Demo
-          </a>
-          {typeof project.githubLink === "string" ? (<a
-            href={project.githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
-              darkMode
-                ? "bg-gray-700 hover:bg-gray-600 text-gray-300"
-                : "bg-gray-200 hover:bg-gray-300 text-gray-700"
-            }`}
-          >
-            <i className="fab fa-github mr-1 sm:mr-1.5"></i> Code
-          </a>) : (
+          {project.liveLink ? (
+            <a
+              href={project.liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
+                darkMode
+                  ? "bg-indigo-600 hover:bg-indigo-700 text-white"
+                  : "bg-indigo-600 hover:bg-indigo-700 text-white"
+              }`}
+            >
+              <i className="fas fa-external-link-alt mr-1 sm:mr-1.5"></i> Live
+              Demo
+            </a>
+          ) : (
+            ""
+          )}
+          {typeof project.githubLink === "string" ? (
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
+                darkMode
+                  ? "bg-gray-700 hover:bg-gray-600 text-gray-300"
+                  : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+              }`}
+            >
+              <i className="fab fa-github mr-1 sm:mr-1.5"></i> Code
+            </a>
+          ) : (
             <div className="flex space-x-2">
               <a
                 href={project.githubLink.frontend}
@@ -86,7 +92,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
                     : "bg-gray-200 hover:bg-gray-300 text-gray-700"
                 }`}
               >
-                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Frontend
+                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Frontend Code
               </a>
               <a
                 href={project.githubLink.backend}
@@ -98,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
                     : "bg-gray-200 hover:bg-gray-300 text-gray-700"
                 }`}
               >
-                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Backend
+                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Backend Code
               </a>
             </div>
           )}
