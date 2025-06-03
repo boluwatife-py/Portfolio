@@ -3,14 +3,14 @@ import type { Project } from "../types/project";
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "E-Commerce Platform API",
     description:
       "A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard.",
     image: "/images/ecommerce platform.jpg",
-    technologies: ["React", "Django", "PostgreSQL", "Tailwind CSS"],
-    liveLink: "https://example.com/ecommerce",
-    githubLink: "https://github.com/boluwatife/ecommerce",
-    category: "fullstack",
+    technologies: ["FastAPI", "alembic", "SQLAlchemy", "JWT", "python"],
+    liveLink: null,
+    githubLink: "https://github.com/boluwatife-py/E-commerce-backend-fastapi-python",
+    category: "backend",
   },
   {
     id: 2,
