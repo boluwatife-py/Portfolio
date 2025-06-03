@@ -86,7 +86,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
                     : "bg-gray-200 hover:bg-gray-300 text-gray-700"
                 }`}
               >
-                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Frontend Code
+                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Frontend
               </a>
               <a
                 href={project.githubLink.backend}
@@ -98,7 +98,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
                     : "bg-gray-200 hover:bg-gray-300 text-gray-700"
                 }`}
               >
-                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Backend Code
+                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Backend
               </a>
             </div>
           )}
