@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
             <i className="fas fa-external-link-alt mr-1 sm:mr-1.5"></i> Live
             Demo
           </a>
-          <a
+          {typeof project.githubLink === "string" ? (<a
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -74,7 +74,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
             }`}
           >
             <i className="fab fa-github mr-1 sm:mr-1.5"></i> Code
-          </a>
+          </a>) : (
+            <div className="flex space-x-2">
+              <a
+                href={project.githubLink.frontend}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
+                  darkMode
+                    ? "bg-gray-700 hover:bg-gray-600 text-gray-300"
+                    : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                }`}
+              >
+                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Frontend Code
+              </a>
+              <a
+                href={project.githubLink.backend}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md flex items-center !rounded-button whitespace-nowrap cursor-pointer ${
+                  darkMode
+                    ? "bg-gray-700 hover:bg-gray-600 text-gray-300"
+                    : "bg-gray-200 hover:bg-gray-300 text-gray-700"
+                }`}
+              >
+                <i className="fab fa-github mr-1 sm:mr-1.5"></i> Backend Code
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>

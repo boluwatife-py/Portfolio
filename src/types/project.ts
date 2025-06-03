@@ -6,6 +6,6 @@ export interface Project {
   image: string;
   technologies: string[];
   liveLink: string;
-  githubLink: string;
+  githubLink: string | {frontend: string; backend: string };
   category: 'frontend' | 'backend' | 'fullstack';
 }
