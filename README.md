@@ -12,9 +12,8 @@ This portfolio showcases some of my projects, technical skills, and background i
 ### ⚙️ Tech Stack
 
 - **Frontend:** React.js, Tailwind CSS  
-- **State Management:** Nested props (intentionally used to highlight component composition skills)  
-- **Routing:** React Router  
-- **Deployment:** Vercel / Netlify (depending on version)
+- **State Management:** Nested props (intentionally used to highlight component composition skills)
+- **Deployment:** GitHub pages
 
 > **Note:** I’m aware of alternatives like `useContext`, but for this project, I opted to use **nested props intentionally** to keep state flow explicit and demonstrate compositional clarity.
 

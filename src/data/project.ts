@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description:
       "A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard.",
     image: "/images/ecommerce platform.jpg",
-    technologies: ["FastAPI", "alembic", "SQLAlchemy", "JWT", "python"],
+    technologies: ["FastAPI", "Alembic", "SQLAlchemy", "JWT", "Python", "Asyncio", "PostgreSQL", "WebSockets"],
     liveLink: null,
     githubLink: "https://github.com/boluwatife-py/E-commerce-backend-fastapi-python",
     category: "backend",
