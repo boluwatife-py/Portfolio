@@ -55,7 +55,7 @@ export const projects: Project[] = [
       description:
         "A personal portfolio website showcasing projects, skills, and contact information.",
       image:
-        "/images/portfolio website.jpg",
+        "/images/portfolio.png",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
       liveLink: "https://example.com/portfolio",
       githubLink: "https://github.com/boluwatife/portfolio",
