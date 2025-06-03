@@ -10,7 +10,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -37,10 +37,35 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
     const hasError = Object.values(newErrors).some((msg) => msg !== "");
 
     if (!hasError) {
-      // Submit logic here
-      
-      form.reset();
-      setErrors({ name: "", email: "", subject: "", message: "" });
+      try {
+        const response = await fetch(
+          "https://boluwatifeileri.pythonanywhere.com/send-email",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              subject,
+              body: `From: ${name} <${email}>\n\n${message}`,
+            }),
+          }
+        );
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          console.error("Email failed to send:", errorData.error);
+          alert("Failed to send email: " + errorData.error);
+          return;
+        }
+
+        alert("Email sent successfully!");
+        form.reset();
+        setErrors({ name: "", email: "", subject: "", message: "" });
+      } catch (error) {
+        console.error("Unexpected error:", error);
+        alert("An unexpected error occurred. Please try again.");
+      }
     }
   };
 
