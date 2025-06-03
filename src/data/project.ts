@@ -57,8 +57,8 @@ export const projects: Project[] = [
       image:
         "/images/portfolio.png",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      liveLink: "https://example.com/portfolio",
-      githubLink: "https://github.com/boluwatife/portfolio",
+      liveLink: "https://boluwatife.tech",
+      githubLink: "https://github.com/boluwatife-py/portfolio",
       category: "frontend",
     },
     {
