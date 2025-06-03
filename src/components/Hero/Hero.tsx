@@ -1,21 +1,15 @@
 import CodeSnippet from "./CodeSnippet";
 import Button from "../ui/Button";
-import { smoothScrollTo } from "../../utils/smoothScroll";
 
 interface HeroProps {
   darkMode: boolean;
 }
 
 function Hero({ darkMode }: HeroProps) {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    smoothScrollTo("#projects");
-  };
-
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-12 md:pt-16"
+      className="relative flex items-center pt-12 md:pt-32"
     >
       <div className="container mx-auto px-3 md:px-6 py-8 md:py-12 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -83,19 +77,6 @@ function Hero({ darkMode }: HeroProps) {
             <CodeSnippet darkMode={darkMode} />
           </div>
         </div>
-      </div>
-      <div className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a
-          href="#projects"
-          onClick={handleClick}
-          className={`flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full ${
-            darkMode
-              ? "bg-gray-800 text-gray-300"
-              : "bg-white text-gray-700 shadow-md"
-          } cursor-pointer`}
-        >
-          <i className="fas fa-chevron-down text-sm md:text-base"></i>
-        </a>
       </div>
     </section>
   );

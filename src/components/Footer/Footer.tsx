@@ -156,7 +156,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
                   href="#"
                   className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
-                  UI/UX Design
+                  Database Design
                 </a>
               </li>
               <li>
@@ -164,7 +164,7 @@ export default function Footer({ darkMode }: { darkMode: boolean }) {
                   href="#"
                   className="text-sm sm:text-base hover:text-indigo-600 transition-colors cursor-pointer"
                 >
-                  Technical Consultation
+                  UI/UX Design
                 </a>
               </li>
               <li>

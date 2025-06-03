@@ -38,7 +38,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
 
     if (!hasError) {
       // Submit logic here
-      console.log({ name, email, subject, message });
+      
       form.reset();
       setErrors({ name: "", email: "", subject: "", message: "" });
     }

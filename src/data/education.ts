@@ -9,11 +9,11 @@ export const educations: Education[] = [
   {
     icon: 'fa-certificate',
     title: 'AWS Certified Developer',
-    subtitle: 'Amazon Web Services • 2022',
+    subtitle: 'Amazon Web Services • 2023',
   },
   {
     icon: 'fa-award',
-    title: 'Full-Stack Web Development',
+    title: 'Full-Stack Developer',
     subtitle: 'SQI College of ICT • 2023',
   },
 ];

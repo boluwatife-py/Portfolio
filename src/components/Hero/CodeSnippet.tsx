@@ -5,7 +5,7 @@ interface CodeSnippetProps {
 function CodeSnippet({ darkMode }: CodeSnippetProps){
   return (
     <div
-      className={`w-full max-w-md p-1 rounded-2xl ${
+      className={`w-full max-w-md p-1 rounded-2xl animate-bounce ${
         darkMode ? 'bg-gradient-to-br from-indigo-600 to-purple-600' : 'bg-gradient-to-br from-indigo-500 to-purple-500'
       }`}
     >

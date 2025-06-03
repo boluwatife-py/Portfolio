@@ -57,7 +57,7 @@ const Projects: React.FC<ProjectsProps> = ({
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 transition duration-300 ease-in-out">
           {filteredProjects.slice(0, visibleProjects).map((project) => (
             <ProjectCard
               key={project.id}
