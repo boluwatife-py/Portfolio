@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import Input, { TextArea } from "../ui/Input";
 import Label from "../ui/Label";
 
@@ -37,6 +38,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
     const hasError = Object.values(newErrors).some((msg) => msg !== "");
 
     if (!hasError) {
+      const loadingToast = toast.loading("Sending message...");
       try {
         const response = await fetch(
           "https://boluwatifeileri.pythonanywhere.com/send-email",
@@ -55,16 +57,22 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
         if (!response.ok) {
           const errorData = await response.json();
           console.error("Email failed to send:", errorData.error);
-          alert("Failed to send email: " + errorData.error);
+          toast.error("Failed to send message: " + errorData.error, {
+            id: loadingToast,
+          });
           return;
         }
 
-        alert("Email sent successfully!");
+        toast.success("Message sent successfully!", {
+          id: loadingToast,
+        });
         form.reset();
         setErrors({ name: "", email: "", subject: "", message: "" });
       } catch (error) {
         console.error("Unexpected error:", error);
-        alert("An unexpected error occurred. Please try again.");
+        toast.error("An unexpected error occurred. Please try again.", {
+          id: loadingToast,
+        });
       }
     }
   };

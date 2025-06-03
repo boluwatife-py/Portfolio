@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
           : "bg-white hover:shadow-xl"
       }`}
     >
-      <div className="h-40 sm:h-44 md:h-48 overflow-hidden">
+      <div className="hidden sm:block h-40 sm:h-44 md:h-48 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
