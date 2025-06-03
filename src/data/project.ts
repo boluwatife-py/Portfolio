@@ -16,10 +16,10 @@ export const projects: Project[] = [
     id: 2,
     title: "Free API Platform",
     description:
-      "A fullstack platform featuring a FastAPI backend that serves free public APIs and a React frontend for browsing and testing them. Includes Swagger docs, rate-limiting, and responsive UI.",
-    image: "/images/free-api-platform.jpg",
+      "A fullstack platform featuring a FastAPI backend that serves free public APIs and a React frontend for browsing and testing them. Includes Swagger docs and responsive UI.",
+    image: "/images/free-api-platform.png",
     technologies: ["React", "FastAPI", "Tailwind CSS", "Radix UI", "Wouter", "SQLalchemy", "asyncio", "Error Monitoring", "TypeScript"],
-    liveLink: "softtouchapi.netlify.app",
+    liveLink: "https://softtouch.boluwatife.tech",
     githubLink: {
       frontend: "https://github.com/boluwatife-py/SoftTouch",
       backend: "https://github.com/boluwatife-py/SoftTouchAPI",
