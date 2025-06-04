@@ -14,7 +14,7 @@ export const projects: Project[] = [
       "Chart.js",
       "Stripe API",
     ],
-    liveLink: "https://example.com/beatstore",
+    liveLink: "https://admin1234.pythonanywhere.com",
     githubLink: "https://github.com/boluwatife-py/Kairos-Store",
     category: "fullstack",
   },
