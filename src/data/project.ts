@@ -7,9 +7,19 @@ export const projects: Project[] = [
     description:
       "A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard.",
     image: "/images/ecommerce platform.jpg",
-    technologies: ["FastAPI", "Alembic", "SQLAlchemy", "JWT", "Python", "Asyncio", "PostgreSQL", "WebSockets"],
+    technologies: [
+      "FastAPI",
+      "Alembic",
+      "SQLAlchemy",
+      "JWT",
+      "Python",
+      "Asyncio",
+      "PostgreSQL",
+      "WebSockets",
+    ],
     liveLink: null,
-    githubLink: "https://github.com/boluwatife-py/E-commerce-backend-fastapi-python",
+    githubLink:
+      "https://github.com/boluwatife-py/E-commerce-backend-fastapi-python",
     category: "backend",
   },
   {
@@ -18,7 +28,17 @@ export const projects: Project[] = [
     description:
       "A fullstack platform featuring a FastAPI backend that serves free public APIs and a React frontend for browsing and testing them. Includes Swagger docs and responsive UI.",
     image: "/images/free-api-platform.png",
-    technologies: ["React", "FastAPI", "Tailwind CSS", "Radix UI", "Wouter", "SQLalchemy", "asyncio", "Error Monitoring", "TypeScript"],
+    technologies: [
+      "React",
+      "FastAPI",
+      "Tailwind CSS",
+      "Radix UI",
+      "Wouter",
+      "SQLalchemy",
+      "asyncio",
+      "Error Monitoring",
+      "TypeScript",
+    ],
     liveLink: "https://softtouch.boluwatife.tech",
     githubLink: {
       frontend: "https://github.com/boluwatife-py/SoftTouch",
@@ -39,14 +59,14 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Blog API",
+    title: "Plumbing Business Website",
     description:
-      "A RESTful API for a blog platform with authentication, authorization, and CRUD operations.",
-    image: "/images/blog api.jpg",
-    technologies: ["Python", "Flask", "JWT", "SQLAlchemy"],
-    liveLink: "https://example.com/blogapi",
-    githubLink: "https://github.com/boluwatife/blogapi",
-    category: "backend",
+      "A responsive landing page for a plumbing business, built with HTML, Tailwind CSS, and Remix Icon. Designed for showcasing services and capturing customer interest.",
+    image: "/images/plumbing business.png",
+    technologies: ["HTML", "Tailwind CSS", "Remix Icon", "JavaScript", "CSS"],
+    liveLink: "https://plumbing.boluwatife.tech",
+    githubLink: "https://github.com/boluwatife-py/Plumber-Demo",
+    category: "frontend",
   },
   {
     id: 5,
