@@ -2,6 +2,23 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
+    id: 4,
+    title: "Beat Store Platform",
+    description:
+      "A full-featured beat selling website with secure payment integration, track previews, real-time analytics, and automated download handling. Designed for music producers to showcase and sell their beats online.",
+    image: "/images/Ecommerce-software-store.png",
+    technologies: [
+      "Django",
+      "Tailwind CSS",
+      "JavaScript",
+      "Chart.js",
+      "Stripe API",
+    ],
+    liveLink: "https://example.com/beatstore",
+    githubLink: "https://github.com/boluwatife-py/Kairos-Store",
+    category: "fullstack",
+  },
+  {
     id: 1,
     title: "E-Commerce Platform API",
     description:
@@ -16,7 +33,7 @@ export const projects: Project[] = [
       "Asyncio",
       "PostgreSQL",
       "WebSockets",
-      "Supabase"
+      "Supabase",
     ],
     liveLink: null,
     githubLink:
@@ -47,17 +64,17 @@ export const projects: Project[] = [
     },
     category: "fullstack",
   },
-  {
-    id: 3,
-    title: "Weather Dashboard",
-    description:
-      "A weather dashboard that displays current and forecasted weather data with interactive visualizations.",
-    image: "/images/weather dashboard.jpg",
-    technologies: ["JavaScript", "Chart.js", "OpenWeather API"],
-    liveLink: "https://example.com/weather",
-    githubLink: "https://github.com/boluwatife/weather",
-    category: "frontend",
-  },
+  // {
+  //   id: 3,
+  //   title: "Weather Dashboard",
+  //   description:
+  //     "A weather dashboard that displays current and forecasted weather data with interactive visualizations.",
+  //   image: "/images/weather dashboard.jpg",
+  //   technologies: ["JavaScript", "Chart.js", "OpenWeather API"],
+  //   liveLink: "https://example.com/weather",
+  //   githubLink: "https://github.com/boluwatife/weather",
+  //   category: "frontend",
+  // },
   {
     id: 4,
     title: "Plumbing Business Website",
