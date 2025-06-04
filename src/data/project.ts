@@ -5,8 +5,8 @@ export const projects: Project[] = [
     id: 1,
     title: "E-Commerce Platform API",
     description:
-      "A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard.",
-    image: "/images/ecommerce platform.jpg",
+      "A full-featured e-commerce platform with user authentication, admin dashboard and search-filter.",
+    image: "/images/ecommerceAPI.png",
     technologies: [
       "FastAPI",
       "Alembic",
@@ -16,6 +16,7 @@ export const projects: Project[] = [
       "Asyncio",
       "PostgreSQL",
       "WebSockets",
+      "Supabase"
     ],
     liveLink: null,
     githubLink:
