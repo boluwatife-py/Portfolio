@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "A Flask-based RESTful API for managing personal expenses, with user authentication, expense tracking, and category management.",
     image: "/images/expenseTrackerAPI.png",
     technologies: ["Flask", "Python", "SQLite", "JWT"],
-    liveLink: "https://example.com/expensetrackerapi",
+    liveLink: null,
     githubLink: "https://github.com/boluwatife-py/ExpenseTrackerApi",
     category: "backend",
   }
