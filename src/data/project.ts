@@ -64,17 +64,6 @@ export const projects: Project[] = [
     },
     category: "fullstack",
   },
-  // {
-  //   id: 3,
-  //   title: "Weather Dashboard",
-  //   description:
-  //     "A weather dashboard that displays current and forecasted weather data with interactive visualizations.",
-  //   image: "/images/weather dashboard.jpg",
-  //   technologies: ["JavaScript", "Chart.js", "OpenWeather API"],
-  //   liveLink: "https://example.com/weather",
-  //   githubLink: "https://github.com/boluwatife/weather",
-  //   category: "frontend",
-  // },
   {
     id: 4,
     title: "Plumbing Business Website",
@@ -127,25 +116,14 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
-    id: 8,
-    title: "Fitness Tracker",
-    description:
-      "A fitness tracking application that allows users to log workouts, track progress, and set goals.",
-    image: "/images/fitness tracker.jpg",
-    technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
-    liveLink: "https://example.com/fitnesstracker",
-    githubLink: "https://github.com/boluwatife/fitnesstracker",
-    category: "fullstack",
-  },
-  {
     id: 9,
-    title: "Recipe Finder",
+    title: "Expense Tracker Backend API",
     description:
-      "A recipe finder application that allows users to search for recipes based on ingredients, dietary restrictions, and cuisine.",
-    image: "/images/recipe finder.jpg",
-    technologies: ["JavaScript", "React", "Spoonacular API"],
-    liveLink: "https://example.com/recipefinder",
-    githubLink: "https://github.com/boluwatife/recipefinder",
-    category: "frontend",
-  },
+      "A Flask-based RESTful API for managing personal expenses, with user authentication, expense tracking, and category management.",
+    image: "/images/expenseTrackerAPI.png",
+    technologies: ["Flask", "Python", "SQLite", "JWT"],
+    liveLink: "https://example.com/expensetrackerapi",
+    githubLink: "https://github.com/boluwatife-py/ExpenseTrackerApi",
+    category: "backend",
+  }
 ];
