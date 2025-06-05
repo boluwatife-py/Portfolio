@@ -2,7 +2,7 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
-    id: 4,
+    id: 1,
     title: "Beat Store Platform",
     description:
       "A full-featured beat selling website with secure payment integration, track previews, real-time analytics, and automated download handling. Designed for music producers to showcase and sell their beats online.",
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     category: "fullstack",
   },
   {
-    id: 1,
+    id: 2,
     title: "E-Commerce Platform API",
     description:
       "A full-featured e-commerce platform with user authentication, admin dashboard and search-filter.",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     category: "backend",
   },
   {
-    id: 2,
+    id: 3,
     title: "Free API Platform",
     description:
       "A fullstack platform featuring a FastAPI backend that serves free public APIs and a React frontend for browsing and testing them. Includes Swagger docs and responsive UI.",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
-    id: 9,
+    id: 8,
     title: "Expense Tracker Backend API",
     description:
       "A Flask-based RESTful API for managing personal expenses, with user authentication, expense tracking, and category management.",
