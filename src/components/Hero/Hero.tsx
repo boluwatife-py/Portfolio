@@ -43,6 +43,7 @@ function Hero({ darkMode }: HeroProps) {
                 "JavaScript",
                 "TypeScript",
                 "React",
+                "Three.js",
                 "JWT",
                 "Tailwind CSS",
                 "Bootstrap",
