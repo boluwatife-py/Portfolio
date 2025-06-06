@@ -1,0 +1,15 @@
+{
+  "name": "Boluwatife Akingbade Ilerioluwa",
+  "short_name": "Boluwatife",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F39F6",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "48x48",
+      "type": "image/svg+xml"
+    }
+  ]
+}
