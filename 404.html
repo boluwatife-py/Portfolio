@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      // Apply dark class early based on localStorage
+      const darkMode = localStorage.darkTheme === "true";
+      if (darkMode) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+
+  <body
+    class="min-h-screen font-sans flex items-center justify-center transition-colors duration-300 bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100"
+  >
+    <div class="flex flex-col items-center text-center p-4">
+      <!-- Lottie Animation -->
+      <div
+        id="aikation"
+        class="mb-8 w-[400px] h-[400px] sm:w-[500px] sm:h-[500px] cursor-pointer"
+      ></div>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-4 text-xl">
+        <a
+          href="https://github.com/boluwatife-py"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://discordapp.com/users/1343657247175213077"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          aria-label="Discord"
+        >
+          <i class="fab fa-discord"></i>
+        </a>
+        <a
+          href="https://twitter.com/boluwatifeileri"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a
+          href="https://dev.to/boluwatifeilerioluwa"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+          aria-label="Dev.to"
+        >
+          <i class="fab fa-dev"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Lottie Initialization -->
+    <script>
+      lottie.loadAnimation({
+        container: document.getElementById("aikation"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "/404.json", // Adjust path if necessary
+      });
+
+      document.getElementById("aikation").addEventListener("click", function () {
+        window.location.href = "/";
+      });
+    </script>
+  </body>
+</html>
