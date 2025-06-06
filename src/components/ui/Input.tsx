@@ -1,6 +1,3 @@
-// Input.tsx
-import React, { useState } from "react";
-
 interface InputProps {
   darkMode: boolean;
   placeholder?: string;
@@ -10,6 +7,7 @@ interface InputProps {
   required?: boolean;
   autoComplete?: React.HTMLInputAutoCompleteAttribute;
   error?: string;
+  disabled?: boolean;
 }
 
 interface TextAreaProps {
@@ -20,6 +18,7 @@ interface TextAreaProps {
   required?: boolean;
   rows?: number | 5;
   error?: string;
+  disabled?: boolean;
 }
 
 export default function Input({
@@ -32,8 +31,6 @@ export default function Input({
   autoComplete,
   error,
 }: InputProps) {
-  const [inputValue, setInputValue] = useState("");
-
   return (
     <div className="space-y-1">
       <input
@@ -51,8 +48,6 @@ export default function Input({
             ? "border border-red-500 focus:ring-red-500"
             : "border-gray-300 focus:ring-indigo-500"
         }`}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
         required={required}
       />
       {error && <p className="text-xs sm:text-sm text-red-500">{error}</p>}

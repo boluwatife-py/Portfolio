@@ -10,6 +10,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
     subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,6 +39,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
     const hasError = Object.values(newErrors).some((msg) => msg !== "");
 
     if (!hasError) {
+      setIsLoading(true);
       const loadingToast = toast.loading("Sending message...");
       try {
         const response = await fetch(
@@ -60,6 +62,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
           toast.error("Failed to send message: " + errorData.error, {
             id: loadingToast,
           });
+          setIsLoading(false);
           return;
         }
 
@@ -68,11 +71,13 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
         });
         form.reset();
         setErrors({ name: "", email: "", subject: "", message: "" });
+        setIsLoading(false);
       } catch (error) {
         console.error("Unexpected error:", error);
         toast.error("An unexpected error occurred. Please try again.", {
           id: loadingToast,
         });
+        setIsLoading(false);
       }
     }
   };
@@ -104,6 +109,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             name="name"
             required
             error={errors.name}
+            disabled={isLoading}
           />
         </div>
         <div>
@@ -119,6 +125,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             name="email"
             required
             error={errors.email}
+            disabled={isLoading}
           />
         </div>
         <div>
@@ -134,6 +141,7 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             required
             autoComplete="off"
             error={errors.subject}
+            disabled={isLoading}
           />
         </div>
         <div>
@@ -147,13 +155,26 @@ function ContactForm({ darkMode }: { darkMode: boolean }) {
             placeholder="Your message here..."
             required
             error={errors.message}
+            disabled={isLoading}
           />
         </div>
         <button
           type="submit"
-          className="w-full px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors !rounded-button whitespace-nowrap cursor-pointer"
+          className={`w-full px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-medium rounded-lg transition-colors !rounded-button whitespace-nowrap cursor-pointer ${
+            isLoading
+              ? "bg-indigo-500 cursor-not-allowed"
+              : "bg-indigo-600 hover:bg-indigo-700"
+          } text-white`}
+          disabled={isLoading}
         >
-          Send Message
+          {isLoading ? (
+            <>
+              <i className="fas fa-spinner fa-spin mr-2"></i>
+              Sending...
+            </>
+          ) : (
+            "Send Message"
+          )}
         </button>
       </form>
     </div>
