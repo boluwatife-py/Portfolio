@@ -22,8 +22,8 @@ function About({ darkMode }: { darkMode: boolean }) {
                 darkMode ? "text-gray-300" : "text-gray-700"
               }`}
             >
-              I'm Boluwatife Akingbade Ileiroluwa, a passionate full-stack
-              developer with expertise in building robust web applications. With
+              I'm Boluwatife Akingbade Ileiroluwa, a full-stack
+              developer | software engineer with expertise in building robust web applications. With
               a strong foundation in both frontend and backend technologies, I
               create seamless digital experiences that solve real-world
               problems.
