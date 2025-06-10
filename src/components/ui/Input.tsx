@@ -30,6 +30,7 @@ export default function Input({
   id,
   autoComplete,
   error,
+  disabled,
 }: InputProps) {
   return (
     <div className="space-y-1">
@@ -39,6 +40,7 @@ export default function Input({
         name={name}
         placeholder={placeholder}
         autoComplete={autoComplete}
+        disabled={disabled}
         className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none ${
           darkMode
             ? "bg-gray-700 text-white placeholder-gray-400"
@@ -64,6 +66,7 @@ export function TextArea({
   id,
   rows = 5,
   error,
+  disabled
 }: TextAreaProps & { error?: string }) {
   return (
     <div className="space-y-1">
@@ -72,6 +75,7 @@ export function TextArea({
         rows={rows}
         name={name}
         placeholder={placeholder}
+        disabled={disabled}
         className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg focus:ring-2 focus:outline-none ${
           darkMode
             ? "bg-gray-700 text-white placeholder-gray-400"
